@@ -1,0 +1,26 @@
+{
+    "name": "Canva Pro Elements Remover",
+    "version": "0.1.0",
+    "description": "Removing pro elements from canva design elements search to make sure you have a smooth experience.",
+    "permissions": ["tabs"],
+    "host_permissions": ["https://*.canva.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.canva.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/ext-icon.png",
+        "24": "assets/ext-icon.png",
+        "32": "assets/ext-icon.png"
+      },
+      "default_title": "Canva Pro",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
